@@ -1,9 +1,19 @@
 const router = require("express").Router();
 const Workout = require("../models/workout");
 
-router.get("/", (req, res) => {
-  res.status(200);
+// getLastWorkout
+router.get("/", async (req, res) => {
+  Workout.find({})
+    .then((workout) => {
+      res.status(200).json(workout);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
+
+// create workout
 
 module.exports = router;
 

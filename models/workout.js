@@ -6,19 +6,31 @@ const WorkoutSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-  exercises: Array,
-  // The array contains the following information and should be validated on the front end:
-  // workoutType: String,
-  // name: String,
-  // duration: Number,
+  exercises: [
+    {
+      // The array contains the following information and should be validated on the front end:
+      workoutType: {
+        type: String,
+        required: "Please enter workout type",
+      },
+      name: {
+        type: String,
+        required: "Please enter workout name",
+      },
+      duration: {
+        type: String,
+        required: "Please enter duration",
+      },
 
-  // //Cardio
-  // distance: Number,
+      //Cardio
+      distance: Number,
 
-  // // Resistance
-  // weight: Number,
-  // sets: Number,
-  // reps: Number,
+      // Resistance
+      weight: Number,
+      sets: Number,
+      reps: Number,
+    },
+  ],
 });
 
 const Workout = mongoose.model("Workout", WorkoutSchema);

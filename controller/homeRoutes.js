@@ -1,7 +1,14 @@
-// const router = require("express").Router();
+const router = require("express").Router();
+const path = require("path");
 
-// router.get("/", (req, res) => {
-//   res.sendFile(index.js);
-// });
+router.get("/exercise", (req, res) => {
+  // res.sendFile("./exercise.html");
+  res.sendFile(path.join(__dirname, "../public/exercise.html"));
+});
 
-// module.exports = router;
+router.get("/stats", (req, res) => {
+  // res.sendFile("./stats.html");
+  res.sendFile(path.join(__dirname, "../public/stats.html"));
+});
+
+module.exports = router;

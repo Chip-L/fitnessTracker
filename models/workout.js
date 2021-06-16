@@ -9,7 +9,8 @@ const WorkoutSchema = new Schema({
   exercises: [
     {
       // The array contains the following information and should be validated on the front end:
-      workoutType: {
+      _id: false,
+      type: {
         type: String,
         required: "Please enter workout type",
       },
@@ -18,7 +19,7 @@ const WorkoutSchema = new Schema({
         required: "Please enter workout name",
       },
       duration: {
-        type: String,
+        type: Number,
         required: "Please enter duration",
       },
 

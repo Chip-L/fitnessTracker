@@ -1,4 +1,5 @@
 const API = {
+  // this apparently wants all of the workouts and then IT will take the last one - poorly named function. :(
   async getLastWorkout() {
     let res;
     try {
